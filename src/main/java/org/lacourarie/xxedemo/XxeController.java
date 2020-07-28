@@ -14,8 +14,8 @@ public class XxeController {
 
     private static final Logger LOGGER = Logger.getLogger(XMLInputFactory.class.getCanonicalName());
 
-    @Value("#{new Boolean('${org.lacourarie.xxedemo.obfusced}')}")
-    private Boolean obfusced;
+    @Value("#{new Boolean('${org.lacourarie.xxedemo.obfuscated}')}")
+    private Boolean obfuscated;
 
     @GetMapping
     public Message get() {
@@ -29,7 +29,8 @@ public class XxeController {
 
         // Send message ...
 
-        return new Message(String.format("Your message (%s) has been send", (this.obfusced) ? "###" : message.getText()));
+        return new Message(String.format("Your message (%s) has been send",
+                (this.obfuscated) ? "###" : message.getText()));
     }
 
 }
