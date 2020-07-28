@@ -9,6 +9,7 @@ import com.sun.xml.internal.fastinfoset.stax.factory.StAXOutputFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.MappingJackson2XmlHttpMessageConverter;
 
 import javax.xml.stream.XMLInputFactory;
@@ -21,7 +22,6 @@ public class XxeDemoApplication {
         SpringApplication.run(XxeDemoApplication.class, args);
     }
 
-    @Bean
     public XmlMapper xmlMapper() {
         XMLInputFactory xmlIn = XMLInputFactory.newInstance();
         // as per [dataformat-xml#190], disable external entity expansion by default
@@ -31,6 +31,11 @@ public class XxeDemoApplication {
         XMLOutputFactory xmlOut = XMLOutputFactory.newInstance();
         XmlFactory xf = new XmlFactory(xmlIn, xmlOut);
         return new XmlMapper(xf);
+    }
+
+    @Bean
+    public MappingJackson2XmlHttpMessageConverter converter() {
+        return new MappingJackson2XmlHttpMessageConverter(xmlMapper());
     }
 
 }

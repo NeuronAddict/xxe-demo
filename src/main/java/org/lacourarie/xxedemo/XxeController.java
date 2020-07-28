@@ -10,18 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class XxeController {
 
-    @Autowired
-    private XmlMapper xmlMapper;
-
     @GetMapping
     public Message get() {
         return new Message("Hi! I'm a message, you can post me ;)");
     }
 
     @PostMapping()
-    public Message post(@RequestBody String message) throws JsonProcessingException {
-        Message m = xmlMapper.readValue(message, Message.class);
-        return m;
+    public Message post(@RequestBody Message message) throws JsonProcessingException {
+        return message;
     }
 
 }
