@@ -1,12 +1,10 @@
 package org.lacourarie.xxedemo;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class XxeDemoApplicationTests {
 
-    @Test
+    //@Test
     void contextLoads() {
     }
 
