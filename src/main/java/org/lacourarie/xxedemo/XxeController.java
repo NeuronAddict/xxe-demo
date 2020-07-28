@@ -19,7 +19,7 @@ public class XxeController {
     }
 
     @PostMapping()
-    public Message post(@RequestParam String message) throws JsonProcessingException {
+    public Message post(@RequestBody String message) throws JsonProcessingException {
         Message m = xmlMapper.readValue(message, Message.class);
         return m;
     }
