@@ -1,14 +1,17 @@
 package org.lacourarie.xxedemo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class XxeController {
+
+    @Autowired
+    private XmlMapper xmlMapper;
 
     @GetMapping
     public Message get() {
@@ -16,8 +19,9 @@ public class XxeController {
     }
 
     @PostMapping()
-    public Message post(@RequestBody Message message) {
-        return message;
+    public Message post(@RequestParam String message) throws JsonProcessingException {
+        Message m = xmlMapper.readValue(message, Message.class);
+        return m;
     }
 
 }

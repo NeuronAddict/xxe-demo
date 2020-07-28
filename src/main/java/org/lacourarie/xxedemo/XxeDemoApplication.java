@@ -21,7 +21,7 @@ public class XxeDemoApplication {
         SpringApplication.run(XxeDemoApplication.class, args);
     }
 
-
+    @Bean
     public XmlMapper xmlMapper() {
         XMLInputFactory xmlIn = XMLInputFactory.newInstance();
         // as per [dataformat-xml#190], disable external entity expansion by default
@@ -31,11 +31,6 @@ public class XxeDemoApplication {
         XMLOutputFactory xmlOut = XMLOutputFactory.newInstance();
         XmlFactory xf = new XmlFactory(xmlIn, xmlOut);
         return new XmlMapper(xf);
-    }
-
-    @Bean
-    public MappingJackson2XmlHttpMessageConverter  converter() {
-        return xmlMapper();
     }
 
 }
