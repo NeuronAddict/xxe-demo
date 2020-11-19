@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  owasp-dependency-check:
+    image: owasp/dependency-check:latest
+    volumes:
+    - $PWD:/src
+    - ./odc-reports:/reports
+    - ../OWASP-Dependency-Check/data:/usr/share/dependency-check/data
+
+
