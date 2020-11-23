@@ -1,4 +1,8 @@
-# XXE demo wi OWASp dependency check
+# XXE demo with OWASP dependency check
+
+## WARNING
+
+This repo contains vulnerabilities. DO NOT DEPLOY ON PRODUCTION OR ANY PUBLICY ACCESSIBLE NETWORK.
 
 https://github.com/jeremylong/DependencyCheck
 
