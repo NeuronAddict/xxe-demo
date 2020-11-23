@@ -1,5 +1,5 @@
 [Unit]
-Description=Deluge Bittorrent Client Web Interface
+Description=XXE demo service
 After=network-online.target
 
 [Service]
