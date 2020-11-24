@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "debian/buster64"
+  config.vm.box = "debian/stretch64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "file", source: "xxe-demo.service", destination: "/tmp/xxe-demo.service"
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
-     apt-get install -y openjdk-11-jdk-headless curl
+     apt-get install -y openjdk-8-jdk-headless curl
      echo 'root:hanifwahyu24258730' | sudo chpasswd root
      sed -n 'H;${x;s/\PasswordAuthentication no/PasswordAuthentication yes/;p;}' /etc/ssh/sshd_config > tmp_sshd_config
      cat tmp_sshd_config > /etc/ssh/sshd_config
