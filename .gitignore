@@ -35,3 +35,5 @@ build/
 
 ### Vagrant ###
 .vagrant
+
+doc/
