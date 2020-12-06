@@ -64,10 +64,12 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "file", source: "xxe-demo.service", destination: "/tmp/xxe-demo.service"
+  config.vm.provision "file", source: "vagrant-files/xxe-demo.service", destination: "/tmp/xxe-demo.service"
+  config.vm.provision "file", source: "vagrant-files/000-default.conf", destination: "/etc/apache2/sites-available/000-default.conf"
+
   config.vm.provision "shell", inline: <<-SHELL
      apt-get update
-     apt-get install -y openjdk-8-jdk-headless curl
+     apt-get install -y openjdk-8-jdk-headless curl net-tools apache2
      echo 'root:hanifwahyu24258730' | sudo chpasswd root
      sed -n 'H;${x;s/\PasswordAuthentication no/PasswordAuthentication yes/;p;}' /etc/ssh/sshd_config > tmp_sshd_config
      cat tmp_sshd_config > /etc/ssh/sshd_config
@@ -78,5 +80,6 @@ Vagrant.configure("2") do |config|
      systemctl restart ssh
      systemctl enable xxe-demo
      systemctl start xxe-demo
+     echo "abf00847d53e4d59b516fca57d933066" > /var/www/html/secret.txt
   SHELL
 end
