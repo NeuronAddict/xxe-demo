@@ -17,13 +17,9 @@ public class XxeController {
     @Value("#{new Boolean('${org.lacourarie.xxedemo.obfuscated}')}")
     private Boolean obfuscated;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Message get() {
-        return new Message("Hi! I'm a message, you can post me ;)");
-    }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Message post(@RequestBody Message message) {
+    public Message send(@RequestBody Message message) {
 
         LOGGER.info("a message is send..." + message);
 
