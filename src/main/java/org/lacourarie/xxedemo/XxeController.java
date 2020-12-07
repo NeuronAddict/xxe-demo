@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.xml.stream.XMLInputFactory;
 import java.util.logging.Logger;
 
-@RestController
+@RestController("/api")
 public class XxeController {
 
     private static final Logger LOGGER = Logger.getLogger(XMLInputFactory.class.getCanonicalName());
