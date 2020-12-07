@@ -65,7 +65,7 @@ Vagrant.configure("2") do |config|
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "file", source: "vagrant-files/", destination: "/tmp/"
-
+  config.vm.provision "file", source: "src/main/resources/application.properties", destination: "/tmp/"
   config.vm.provision "shell", inline: <<-SHELL
 
      apt-get update
@@ -84,6 +84,10 @@ Vagrant.configure("2") do |config|
      systemctl restart ssh
      systemctl restart apache2
 
+     mkdir /etc/demo-config
+     cp /vagrant/target/*.jar /etc/demo-config
+     cp /tmp/*.properties /etc/demo-config
+     systemctl daemon-reload
      systemctl enable xxe-demo
      systemctl start xxe-demo
 

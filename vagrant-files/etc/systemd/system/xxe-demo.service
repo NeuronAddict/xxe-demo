@@ -5,7 +5,7 @@ After=network-online.target
 [Service]
 Type=simple
 
-ExecStart=/usr/bin/java -jar /vagrant/target/xxe-demo-0.0.1-SNAPSHOT.jar
+ExecStart=/usr/bin/java -jar /etc/demo-config/xxe-demo-0.0.1-SNAPSHOT.jar --spring.config.location="file:///etc/demo-config/application.properties"
 
 Restart=on-failure
 
