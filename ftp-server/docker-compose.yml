@@ -1,0 +1,14 @@
+version: '2'
+services:
+  ftp:
+    build:
+      context: docker
+    environment:
+      FTP_USERNAME: anonymous
+      FTP_PASSWORD: "Java1.8.0_275@"
+    volumes:
+      - /tmp/ftp:/home/ftp_user_name
+    ports:
+      - "21:21"
+      - "20:20"
+      - "6000-6100:6000-6100"
