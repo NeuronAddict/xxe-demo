@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<bibliotheque titre-livre="XML idiot">
+    <livre>
+        <auteur></auteur>
+        <titre></titre>
+    </livre>
+    <livre>
+        <auteur></auteur>
+        <titre></titre>
+    </livre>
+    <livre>
+        <auteur></auteur>
+        <titre></titre>
+    </livre>
+</bibliotheque>
+<!-- source  : https://fr.wikipedia.org/wiki/Extensible_Markup_Language -->
