@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE CATALOG SYSTEM "example.dtd" [
+        <!ENTITY product1 SYSTEM "product1.xml" >
+        ]>
+<CATALOG>
+    &product1;
+    <PRODUCT>
+        <SPECIFICATIONS></SPECIFICATIONS>
+        <PRICE></PRICE>
+    </PRODUCT>
+</CATALOG>
