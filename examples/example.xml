@@ -1,11 +1,2 @@
 <?xml version="1.0"?>
-<!DOCTYPE CATALOG SYSTEM "http://tiles.apache.org/dtds/tiles-config_3_0.dtd" [
-        <!ENTITY product1 SYSTEM "product1.xml" >
-        ]>
-<CATALOG>
-    &product1;
-    <PRODUCT>
-        <SPECIFICATIONS></SPECIFICATIONS>
-        <PRICE></PRICE>
-    </PRODUCT>
-</CATALOG>
+<!DOCTYPE CATALOG SYSTEM "example.dtd">
