@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!DOCTYPE CATALOG SYSTEM "example.dtd">
+<!DOCTYPE CATALOG SYSTEM "https://raw.githubusercontent.com/NeuronAddict/xxe-demo/master/examples/example.dtd">
 <CATALOG>
     <PRODUCT INVENTORY="InStock">
         <SPECIFICATIONS></SPECIFICATIONS>
